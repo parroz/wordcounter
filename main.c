@@ -6,6 +6,15 @@
 
 int main (int argc, char **argv)
 {
+	FILE * fp;
+
+	if (argc < 2)
+	{
+		fprintf(stderr, "Indique um ficheiro\n");
+		exit(1);
+	}
+
+	fp = abreFicheiro(argv[1],"r");
 
 	for (int i = 0; i < argc; i++)
 	{
@@ -13,7 +22,7 @@ int main (int argc, char **argv)
 	}
 
 
-
+	fclose(fp);
         return 0;
 }
 
